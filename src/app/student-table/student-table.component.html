@@ -1,0 +1,35 @@
+<h1>Table view without custom pipe</h1>
+<table>
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Gender</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let student of students">
+            <td>{{ student.id }}</td>
+            <td>{{ student.name | uppercase}}</td>
+            <td>{{ student.gender | lowercase}}</td>
+        </tr>
+    </tbody>
+</table>
+<h1 style="color: rgb(93, 27, 154);">Table view with custom pipe</h1>
+
+<table>
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Gender</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let student of students">
+            <td>{{ student.id }}</td>
+            <td>{{ student.name | titleCase: student.gender }}</td>
+            <td>{{ student.gender }}</td>
+        </tr>
+    </tbody>
+</table>
